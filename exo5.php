@@ -23,7 +23,7 @@ $cola = new Beverage("black", 2);
 print_r($cola->getInfo());
 
 echo "<br>";
-print_r($cola->temperature);
+print_r($cola->this->temperature);
 echo "<br>";
 
 ?>
