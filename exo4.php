@@ -2,9 +2,9 @@
 // exo 3
 class Beverage {
 
-    private ?string $color;
-    private float $price;
-    private ?string $temperature;
+    protected ?string $color;
+    protected float $price;
+    protected ?string $temperature;
 
     public function __construct(string $color, float $price, string $temperature = "cold") {
         $this-> color = $color;
@@ -32,20 +32,6 @@ class Beverage {
         $this->color = $color;
     }
 
-
-}
-
-class Beer extends Beverage {
-
-    private string $name;
-    private float $alcohol;
-
-    public function __construct(string $color, float $price, string $name, float $alcohol, string $temperature = "cold") {
-        parent::__construct($color, $price, $temperature);
-        $this-> name = $name;
-        $this-> alcohol = $alcohol;
-    }
-
     public function getAlcoholPercentage() {
         return "this beverage contains " . $this->alcohol . "% of alcohol.";
     }
@@ -57,6 +43,22 @@ class Beer extends Beverage {
     public function getAlcohol() {
         return $this->alcohol;
     }
+
+
+}
+
+class Beer extends Beverage {
+
+    protected string $name;
+    protected float $alcohol;
+
+    public function __construct(string $color, float $price, string $name, float $alcohol, string $temperature = "cold") {
+        parent::__construct($color, $price, $temperature);
+        $this-> name = $name;
+        $this-> alcohol = $alcohol;
+    }
+
+   
 
 
 }
